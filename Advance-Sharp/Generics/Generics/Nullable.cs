@@ -1,0 +1,27 @@
+﻿partial class Program
+{
+    public class Nullable<T> where T : struct
+    {
+        private object _value;
+
+
+        public Nullable(T value)
+        {
+            _value = value;
+        }
+
+        public Nullable()
+        {
+        }
+
+        public bool HasValue()
+        {
+             return _value != null; 
+        }
+
+        public T GetValueOrDefault()
+        {
+            return HasValue() ? (T)_value : default(T);
+        }
+    }
+}
